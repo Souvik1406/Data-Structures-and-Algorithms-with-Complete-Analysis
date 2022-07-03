@@ -1,0 +1,244 @@
+What is an Array? Learn more in one read!
+By Vishnu R -Aug 6, 202142009
+ Share
+What is an Array?
+Need of using Array
+Advantages of Array
+What is a 2D Array?
+Initializing 2D array
+What is an Array?
+An array is a collection of similar data elements stored at contiguous memory locations. It is the simplest data structure where each data element can be accessed directly by only using its index number.
+
+For instance, if we want to store the marks scored by a student in 5 subjects, then there’s no need to define individual variables for each subject. Rather, we can define an array which will store the data elements at contiguous memory locations.
+
+· array marks[5] defines the marks scored by a student in 5 different subjects where each subject marks are located at a particular location in the array i.e. marks[0] denotes the marks scored in first subject, marks[1] denotes the marks scored in 2nd subject and so on.
+
+Need of using Array –
+In programming, most of the cases need to store a large amount of data of similar type. To store such a huge amount of data, we need to define numerous variables. It would be very tough to memorize all variable names while writing the programs. Instead, it is better to define an array and store all the elements into it.
+
+Following example illustrates, how array can be used while writing a code-
+
+In the following example, we have given marks of a student in 5 different subjects. Aim is to calculate the average of all the marks of a student.
+
+Without using array –
+1
+2
+3
+4
+5
+6
+7
+#include<stdio.h>
+void main()
+{
+            int subject1 = 40, subject2 = 52, subject3 = 47, subject4 = 70, subject5= 67;
+            float avg = (subject1 + subject2 + subject3 + subject4 + subject5)/5;
+            printf(avg);
+}
+Using array –
+1
+2
+3
+4
+5
+6
+7
+#include<stdio.h>
+void main()
+{
+            int subject1 = 40, subject2 = 52, subject3 = 47, subject4 = 70, subject5= 67;
+            float avg = (subject1 + subject2 + subject3 + subject4 + subject5)/5;
+            printf(avg);
+}
+Complexity of Array Operations –
+Time Complexity
+
+Algorithm	Average case	Worst case
+Access	O(1)	O(1)
+Search	O(n)	O(n)
+Insertion	O(n)	O(n)
+Deletion	O(n)	O(n)
+Space complexity of an array for the worst case is O(n).
+
+Advantages of Array –
+ Arrays represent multiple data elements of the same type using a single name.
+In an array, accessing or searching an element is easy by using the index number.
+ An array can be traversed easily just by incrementing the index by 1.
+Arrays allocate memory in contiguous memory locations for all its data elements.
+Types of indexing in Array-
+· 0 (Zero Based Indexing) –  The first element of array refers to index 0.
+
+· 1 (One Based Indexing) –  The first element of array refers to index 1.
+
+· n (n Based Indexing) – The base index of an array can be chosen as per requirement.
+
+What is an Array
+Accessing Elements in an Array – 
+To access any element of an array we need the following details:
+
+Base Address of array.
+Size of an element in bytes.
+Which type of indexing, array follows.
+Address of any element of a 1D array can be calculated by using the below given formula:
+
+Byte address of an element A[i] = base address + size * (i – first index)
+
+Passing Array to a Function – 
+As mentioned earlier, the name of an array represents the address of the first element of the array. The elements of an array can be traversed just by using the base address.
+
+The below example illustrates how an array can be passed to a function.
+
+The below program defines a function named as total which accepts an array as an argument. This function calculates the sum of all the elements of the array.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+#include<stdio.h>
+int total(int[]);
+void main()
+{
+    int arr[5] = {0,1,2,3,4};
+    int sum = total(arr);
+    printf(“%d”,sum);
+}
+int total(int arr[])
+{
+    int sum=0;
+    int i;
+    for(i=0; i<5; i++)
+    {
+        sum = sum + arr[i];
+    }
+    return sum;
+}
+2D Array– Defined
+2 Dimensional array are often defined as an array of arrays. A 2D array is also called a matrix. A matrix can be depicted as  a table of rows and columns.
+
+Also, now you can learn Arrays in C Programming in Hindi
+
+How to declare 2D Array?
+The syntax of declaring a 2D array is very much similar to that of an 1D array.
+
+Syntax – 
+
+int arr[max_rows][max_columns];
+
+It produces data structure as shown below:
+
+What is an Array
+How to access data in a 2D array?
+As in a one dimensional array, data can be accessed by using only an index, similarly in a two dimensional array we can access the cells individually by using the indices of the cells. There are two indices attached to a single cell, one is its row number and the other one is its column number.
+
+Syntax to store the value stored in any particular cell of an array – 
+
+int x = a[i][j];
+
+Here i and j are the row and column indices respectively.
+
+Initializing 2D array – 
+When we declare a one dimensional array, there’s no need to specify the size of the array but it’s not the same for a two dimensional array. For a 2D array, we need to specify at least the row size i.e the second dimension.
+
+Syntax to declare 2D array – 
+
+int arr[2][2] = {1,2,3,4}
+
+The number of elements present in a 2D array will always be equal to (number of rows * number of columns).
+
+Example :
+
+C program to store user’s data into a 2D array
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+#include<stdio.h>
+void main()
+{
+    int arr[4][4],i,j;
+    for (i=0; i<4; i++)
+    {
+        for (j=0; j<4; j++)
+        {
+            printf(“Enter value for arr[%d][%d]: “ i,j);
+            scanf(“%d”,&arr[i][j]);
+        }
+    }
+}
+ Java program to store user’s data into a 2D array
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+import java.util.Scanner;
+publicclass ArrayTwoD {
+publicstaticvoid main(String[] args) {
+int[][] arr = newint[4][4];
+Scanner sc = new Scanner(System.in);
+for(int i=0; i<4; i++)
+{
+for(int j=0; j<4;j++)
+{
+    System.out.print(“Enter Data”);
+    arr[i][j] = sc.nextInt();
+    System.out.println();
+}
+}
+}
+}
+Mapping 2D to 1D array – 
+2D arrays are mainly created to implement a database table look alike data structure. Whilst in computer memory, the storage technique for 2D arrays is  similar to that of one dimensional array.
+
+The size of a 2D array is always equivalent to the product of the number of rows and the number of columns present in the array. Thus, we need to map two dimensional arrays to one dimensional arrays so as to store them in the memory.
+
+A 3 X 3 2D array is shown in the image below. 
+
+What is an Array
+There are 2 main techniques to map a two dimensional array to one dimensional array
+
+Row Major Ordering – 
+In row major ordering, all the rows of the two dimensional array are stored in a contiguous manner into the memory. Considering the array shown within the above image, its memory allocation according to row major order technique is shown as below.
+
+What is an Array
+First, we insert elements of the 1st row of the 2D array into the memory followed by the elements of 2nd row and so on.
+
+Column Major Ordering – 
+In column major ordering, all the columns of the two dimensional array are stored in a contiguous manner into the memory. Considering the array shown in the above image, its memory allocation consistent with column major order technique is shown below.
+
+What is an Array
+First, we insert elements of the 1st column of the 2D array into the memory followed by the elements of the 2nd column and so on.
